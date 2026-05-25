@@ -11,3 +11,15 @@ runs:
     - name: Run Java
       run: java Main
       shell: bash
+
+    - name: Compile Java Program
+      run: javac *.java
+      shell: bash
+
+    - name: Run Java Program
+      run: java Main
+      shell: bash
+
+    - name: Run Test
+      run: java CalculatorTest
+      shell: bash
