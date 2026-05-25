@@ -10,7 +10,7 @@ runs:
 
   steps:
     - name: Compile Java Program
-      run: javac ${{inputs.file-name}}.java
+      run: javac *.java
       shell: bash
 
     - name: Run Java Program
