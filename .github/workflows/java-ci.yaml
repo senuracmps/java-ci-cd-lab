@@ -21,12 +21,5 @@ jobs:
 
       - name: Run Custom Action
         uses: ./.github/actions/java-build
-
-      - name: Compile Java Program
-        uses: ./.github/actions/java-build
-
-      - name: Run Java Program
-        uses: ./.github/actions/java-build
-
-      - name: Run Test
-        uses: ./.github/actions/java-build
+        with:
+          file-name: Main
