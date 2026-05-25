@@ -5,6 +5,19 @@ inputs:
   file-name:
     description: "Java file name"
     required: true
+
+  username:
+    required: true
+    description: "User name"
+
+outputs:
+  result:
+    description: "Build result"
+
+  message:
+    description: "Greeting message"
+
+
 runs:
   using: "composite"
 
@@ -19,4 +32,12 @@ runs:
 
     - name: Run Test
       run: java CalculatorTest
+      shell: bash
+
+    - name: Set Output
+      run: echo "result=Build Successful" >> $GITHUB_OUTPUT
+      shell: bash
+
+    - name: Create Greeting
+      run: echo "message=Hello ${{inputs.username}}" >> $GITHUB_OUTPUT
       shell: bash

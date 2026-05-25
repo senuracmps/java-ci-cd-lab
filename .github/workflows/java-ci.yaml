@@ -23,3 +23,19 @@ jobs:
         uses: ./.github/actions/java-build
         with:
           file-name: Main
+
+      - name: Run Custom Action
+        id: custom-action
+        uses: ./.github/actions/java-build
+
+      - name: Print Output
+        run: echo "${{ steps.java-build.outputs.result }}"
+
+      - name: Run Greeting Action
+        id: greet-action
+        uses: ./.github/actions/java-build
+        with:
+          username: Pasindu
+
+      - name: Show Greeting
+        run: echo "${{ steps.greet-action.outputs.result }}"
